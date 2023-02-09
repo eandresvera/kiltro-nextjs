@@ -10,11 +10,13 @@ export const Parallax = ({ parallaxImg }) => {
         const imageTop = imageRef.current.offsetTop;
         const imageHeight = imageRef.current.offsetHeight;
         const windowHeight = window.innerHeight;
+        const windowWidth = window.innerWidth;
   
-        let parallax = (scrollTop - imageTop) / windowHeight * 100;
+        console.log(windowWidth)
+        let parallax = windowWidth < 768 ? (scrollTop - imageTop) / windowHeight * 50 : (scrollTop - imageTop) / windowHeight * 150
+        // let parallax = (scrollTop - imageTop) / windowHeight * 50;
   
         imageRef.current.style.backgroundPositionY = `${parallax}px`;
-        imageRef.current.style.filter = `blur(${parallax/5}px)`;
       };
   
       window.addEventListener('scroll', handleScroll);
@@ -26,7 +28,7 @@ export const Parallax = ({ parallaxImg }) => {
       className={`parallax1 h-[20vh] lg:h-[50vh] bg-[url('https://admin.kiltrobcn.com/wp-content/uploads/2023/02/pisco_sour-2.jpeg')] bg-cover  bg bg-no-repeat`}
       ref={imageRef}
       >
-      <div className='text-white h-full font-bold text-4xl flex justify-center items-center'>
+      <div className='text-white h-full font-bold text-xl lg:text-4xl flex justify-center items-center'>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
       </div>
     </div>
