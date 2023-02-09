@@ -14,9 +14,9 @@ export const Parallax = ({ parallaxImg }) => {
         const imageHeight = imageRef.current.offsetHeight;
         const windowHeight = window.innerHeight;
   
-        const parallax = (scrollTop - imageTop) / windowHeight * 300;
+        const parallax = (scrollTop - imageTop) / windowHeight * 200;
   
-        imageRef.current.style.backgroundPosition = '0px '+ (scrollTop * 0.5) + 'px'; ;
+        imageRef.current.style.backgroundPositionY = `${parallax}px`;
       };
   
       window.addEventListener('scroll', handleScroll);
