@@ -8,13 +8,10 @@ export const Parallax = ({ parallaxImg }) => {
       const handleScroll = () => {
         const scrollTop = window.pageYOffset;
         const imageTop = imageRef.current.offsetTop;
-        const imageHeight = imageRef.current.offsetHeight;
         const windowHeight = window.innerHeight;
         const windowWidth = window.innerWidth;
-  
-        console.log(windowWidth)
+
         let parallax = windowWidth < 768 ? (scrollTop - imageTop) / windowHeight * 50 : (scrollTop - imageTop) / windowHeight * 150
-        // let parallax = (scrollTop - imageTop) / windowHeight * 50;
   
         imageRef.current.style.backgroundPositionY = `${parallax}px`;
       };

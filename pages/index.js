@@ -9,7 +9,7 @@ import { firstData } from '../functions/fetchData'
 
 export default function Index({ homepageData }) {
   // console.log(homepageData.nodes[0])
-  const logo = homepageData.nodes[0].logoImg && homepageData.nodes[0].logoImg.node.sourceUrl;
+  const logo = homepageData.nodes[0].logoImg && homepageData.nodes[0].logoImg.node.mediaDetails;
   const parallaxImg = homepageData.nodes[0].parallaxImg ? homepageData.nodes[0].parallaxImg.node.sourceUrl : '';
 
 

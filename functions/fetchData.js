@@ -26,7 +26,14 @@ export async function firstData(){
               local2Link
               logoImg {
                 node {
-                  sourceUrl
+                  mediaDetails {
+                    sizes {
+                      file
+                      width
+                      height
+                      sourceUrl
+                    }
+                  }
                 }
               }
               parallaxImg {
