@@ -16,7 +16,7 @@ export const Parallax = ({ parallaxImg }) => {
   
         const parallax = (scrollTop - imageTop) / windowHeight * 300;
   
-        imageRef.current.style.backgroundPositionY = `${parallax}px`;
+        imageRef.current.style.backgroundPosition = '0px '+ (scrollTop * 0.5) + 'px'; ;
       };
   
       window.addEventListener('scroll', handleScroll);
@@ -42,7 +42,7 @@ export const Parallax = ({ parallaxImg }) => {
   
   return (
     <div 
-      className={`parallax1 h-[50vh] bg-[url('https://admin.kiltrobcn.com/wp-content/uploads/2023/02/pisco_sour-2.jpeg')] bg-cover relative`}
+      className={`parallax1 h-[50vh] bg-[url('https://admin.kiltrobcn.com/wp-content/uploads/2023/02/pisco_sour-2.jpeg')] bg-cover relative bg-no-repeat`}
       ref={imageRef}
       >
       <div className='text-white h-full font-bold text-4xl flex justify-center items-center'>
