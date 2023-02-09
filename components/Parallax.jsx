@@ -33,7 +33,6 @@ export const Parallax = ({ parallaxImg }) => {
           height: '300px',
           width: '100%',
           backgroundRepeat: 'no-repeat',
-          positoin: 'absolute'
         }}
       />
     );
