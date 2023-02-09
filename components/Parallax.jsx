@@ -21,26 +21,9 @@ export const Parallax = ({ parallaxImg }) => {
       return () => window.removeEventListener('scroll', handleScroll);
     }, []);
   
-  
-    // return (
-    //   <div
-    //     ref={imageRef}
-    //     style={{
-    //       backgroundImage: 'url(https://admin.kiltrobcn.com/wp-content/uploads/2023/02/pisco_sour-2.jpeg)',
-    //       backgroundSize: 'cover',
-    //       height: '300px',
-    //       width: '100%',
-    //       backgroundRepeat: 'no-repeat',
-    //     }}
-    //   />
-    // );
-
-  
-
-  
   return (
     <div 
-      className={`parallax1 h-[50vh] bg-[url('https://admin.kiltrobcn.com/wp-content/uploads/2023/02/pisco_sour-2.jpeg')] bg-cover  bg bg-no-repeat`}
+      className={`parallax1 h-[20vh] lg:h-[50vh] bg-[url('https://admin.kiltrobcn.com/wp-content/uploads/2023/02/pisco_sour-2.jpeg')] bg-cover  bg bg-no-repeat`}
       ref={imageRef}
       >
       <div className='text-white h-full font-bold text-4xl flex justify-center items-center'>
