@@ -30,7 +30,7 @@ export const Parallax = ({ parallaxImg }) => {
         style={{
           backgroundImage: 'url(https://admin.kiltrobcn.com/wp-content/uploads/2023/02/pisco_sour-2.jpeg)',
           backgroundSize: 'cover',
-          height: '300px',
+          height: '100%',
           width: '100%',
           backgroundRepeat: 'no-repeat',
         }}
