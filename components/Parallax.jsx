@@ -14,7 +14,7 @@ export const Parallax = ({ parallaxImg }) => {
         const imageHeight = imageRef.current.offsetHeight;
         const windowHeight = window.innerHeight;
   
-        const parallax = (scrollTop - imageTop) / windowHeight * 500;
+        const parallax = (scrollTop - imageTop) / windowHeight * 300;
   
         imageRef.current.style.backgroundPositionY = `${parallax}px`;
       };
@@ -24,27 +24,30 @@ export const Parallax = ({ parallaxImg }) => {
     }, []);
   
   
-    return (
-      <div
-        ref={imageRef}
-        style={{
-          backgroundImage: 'url(https://admin.kiltrobcn.com/wp-content/uploads/2023/02/pisco_sour-2.jpeg)',
-          backgroundSize: 'cover',
-          height: '300px',
-          width: '100%',
-          backgroundRepeat: 'no-repeat',
-        }}
-      />
-    );
+    // return (
+    //   <div
+    //     ref={imageRef}
+    //     style={{
+    //       backgroundImage: 'url(https://admin.kiltrobcn.com/wp-content/uploads/2023/02/pisco_sour-2.jpeg)',
+    //       backgroundSize: 'cover',
+    //       height: '300px',
+    //       width: '100%',
+    //       backgroundRepeat: 'no-repeat',
+    //     }}
+    //   />
+    // );
 
   
 
   
-  // return (
-  //   <div className={`parallax1 h-1/2 bg-[url('https://admin.kiltrobcn.com/wp-content/uploads/2023/02/pisco_sour-2.jpeg')] bg-cover relative`}>
-  //     <div className='text-white h-full font-bold text-4xl flex justify-center items-center'>
-  //       Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-  //     </div>
-  //   </div>
-  // )
+  return (
+    <div 
+      className={`parallax1 h-[50vh] bg-[url('https://admin.kiltrobcn.com/wp-content/uploads/2023/02/pisco_sour-2.jpeg')] bg-cover relative`}
+      ref={imageRef}
+      >
+      <div className='text-white h-full font-bold text-4xl flex justify-center items-center'>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+      </div>
+    </div>
+  )
 }
