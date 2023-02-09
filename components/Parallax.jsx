@@ -23,8 +23,8 @@ export const Parallax = ({ parallaxImg }) => {
   
       let parallax = (scrollPos - imageTop) / windowHeight * 200;
   
-      parallax = Math.min(parallax, 50);
-      parallax = Math.max(parallax, -50);
+      parallax = Math.min(parallax, 80);
+      parallax = Math.max(parallax, -80);
   
       imageRef.current.style.backgroundPositionY = `${parallax}px`;
     }, [scrollPos]);
@@ -51,6 +51,7 @@ export const Parallax = ({ parallaxImg }) => {
         ref={imageRef}
         style={{
           backgroundImage: 'url(https://admin.kiltrobcn.com/wp-content/uploads/2023/02/pisco_sour-2.jpeg)',
+          backgroundSize: 'cover',
           height: '300px',
           width: '100%',
           backgroundRepeat: 'no-repeat',
