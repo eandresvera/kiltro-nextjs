@@ -21,7 +21,7 @@ export default function Index({ homepageData }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={'bg-emerald-400 h-screen'}>
+      <main className={''}>
         <Home logo={logo}/>
         <Parallax parallaxImg={parallaxImg}/>
         <Reserves />
