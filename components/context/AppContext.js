@@ -1,11 +1,23 @@
-import { createContext } from "react";
+import { createContext, useContext, useState } from "react";
 
 export const AppContext = createContext();
 
-export const AppProvider = ({ children }) => {
-    let hello = 'world';
+export const useAppContext = () => useContext(AppContext);
+
+export const AppContextProvider = ({ children }) => {
+
+    const [lang, setLanguage] = useState('esp');
+    const [homeData, sethomeData] = useState(null)
+
+    const updateLang = ( propLang ) => {
+        setLanguage( propLang )
+    }
+    
+    const updateHomeData = ( data ) => {
+        sethomeData( data )
+    }
 
     return (
-        <AppContext.Provider value={{hello}}>{children}</AppContext.Provider>
+        <AppContext.Provider value={{lang, homeData, updateLang, updateHomeData}}>{children}</AppContext.Provider>
     )
 }

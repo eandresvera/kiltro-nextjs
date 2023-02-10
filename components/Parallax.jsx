@@ -25,8 +25,8 @@ export const Parallax = ({ parallaxImg }) => {
       className={`parallax1 h-[150px] lg:h-[400px] bg-[url('https://admin.kiltrobcn.com/wp-content/uploads/2023/02/pisco_sour-2.jpeg')] bg-cover  bg bg-no-repeat`}
       ref={imageRef}
       >
-      <div className='text-white h-full font-bold text-xl lg:text-4xl flex justify-center items-center'>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+      <div className='text-white h-full font-bold text-xl lg:text-4xl flex justify-center items-center mx-5'>
+        Lorem ipsum, dolor sit amet consec adipisicing elit. 
       </div>
     </div>
   )

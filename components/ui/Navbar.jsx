@@ -1,23 +1,29 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
-import { DropdownIcon } from './DropdownIcon'
 import Image from 'next/image';
-import { loadGetInitialProps } from 'next/dist/shared/lib/utils';
+import { useAppContext } from '../context/AppContext';
 
 export const Navbar = () => {
 
   const [language, setLanguage] = useState(false);
   const [isMobileButtonClicked, setisMobileButtonClicked] = useState(false);
+  const { lang, homeData, updateLang } = useAppContext();
+  const logo = homeData.nodes[0].logoImg && homeData.nodes[0].logoImg.node.mediaDetails.sizes[2].sourceUrl;
 
-  console.log(language);
+  const langs = [
+    <Image key="eng" className='cursor-pointer' src="/assets/flags/usa-flag.png" width="40" height="40" alt="Bandera USA" onClick={() => updateLang('eng')}/>,
+    <Image key="esp" className='cursor-pointer' src="/assets/flags/spain-flag.png" width="40" height="40" alt="Bandera España" onClick={() => updateLang('esp')}/>,
+  ]
+  
+  // console.log(logo);
   return (
-    <nav className="w-full text-white shadow">
+    <nav className="w-full text-white shadow z-50">
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
-            <a href="javascript:void(0)">
-                <h2 className="text-2xl font-bold">LOGO</h2>
-            </a>
+            <Link href="/">
+              <Image className=' w-16 md:w-full' src={logo} width="50" height="50" alt='Kiltro restobar logo'/>
+            </Link>
             <div className="md:hidden">
               <button
                 className="p-2 text-gray-700 rounded-md outline-none"
@@ -62,78 +68,33 @@ export const Navbar = () => {
                 isMobileButtonClicked ? "block absolute" : "hidden"
               }`}
           >
-              <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                  <li className="hover:text-blue-600">
-                      <a href="javascript:void(0)">Carta</a>
-                  </li>
-                  <li className="hover:text-blue-600">
-                      <a href="javascript:void(0)">Contacto</a>
-                  </li>
-                  <li className="hover:text-blue-600 flex relative items-center justify-between cursor-pointer">
-                    <Image src="/assets/flags/spain-flag.png" 
-                      width="40" 
-                      height="40" 
-                      alt="Bandera España" 
-                      onClick={() => setLanguage(!language)}
-                    />
-                    <svg className="w-5 h-5 ml-1" fill="white" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
-                    
-                    <div className={`absolute left-0 top-12 ${language ? '' : 'hidden'}`}>
-                      <Image className='cursor-pointer' src="/assets/flags/usa-flag.png" width="40" height="40" alt="Bandera USA"/>
-                    </div>
-                  </li>
-                  {/* <div className={`${language ? '' : 'hidden'}`}>
-                    <Image className='cursor-pointer' src="/assets/flags/usa-flag.png" width="40" height="40" alt="Bandera USA"/>
-                  </div> */}
+              <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0" >
+                <Link href="/" className='hover:text-blue-600'>
+                  {lang === 'esp' && 'Carta'}
+                  {lang === 'eng' && 'Cart'}
+                </Link>
+                <Link href="/" className='hover:text-blue-600'>
+                  {lang === 'esp' && 'Contacto'}
+                  {lang === 'eng' && 'Contact'}
+                </Link>
+                <li className="hover:text-blue-600 flex relative items-center justify-between cursor-pointer"  onClick={() => setLanguage(!language)}>
+                  {
+                    langs.map( element => ( 
+                      element.key === lang && element
+                      ))
+                  }
+                  <svg className="w-5 h-5 ml-1" fill="white" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
+                  
+                  <div className={`left-0 top-12 ${language ? 'absolute' : 'hidden'}`}>
+                    {
+                      langs.filter( element => element.key !== lang )
+                    }
+                  </div>
+                </li>
               </ul>
           </div>
         </div>
       </div>
     </nav>
-
-    // <nav className="px-2 absolute z-50 text-white uppercase">
-    //   <div className="container flex items-center justify-between ">
-    //     <button 
-    //       type="button" 
-    //       className=" p-2 ml-3 text-sm rounded-lg md:hidden focus:outline-none focus:ring-2 focus:ring-gray-200"
-    //       onClick={() => setisMobileButtonClicked(!isMobileButtonClicked)}
-    //     >
-    //       <span className="sr-only">Open main menu</span>
-    //       <svg className="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-    //     </button>
-    //     <div className={`${isMobileButtonClicked ? '' : 'hidden'} w-full md:flex`}>
-    //       <ul className="flex flex-col items-center p-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-14 md:mt-0 md:text-sm md:font-medium md:border-0">
-    //         <li>
-    //           <a href="#" className="block py-2 pl-3 pr-4 rounded md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">
-    //             Carta
-    //           </a>
-    //         </li>
-    //         <li>
-    //           <a href="#" className="block py-2 pl-3 pr-4 rounded md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">
-    //             Contacto
-    //           </a>
-    //         </li>
-    //         <li>
-    //             <button 
-    //               data-dropdown-toggle="dropdownNavbar" 
-    //               class="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium rounded md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
-    //               onClick={() => setIsClicked(!isClicked)}
-    //               >
-    //                 <Image src="/assets/flags/spain-flag.png" width="40" height="40" alt="Bandera España"/>
-    //                 <svg class="w-5 h-5 ml-1" aria-hidden="true" fill="white" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-    //             </button>
-
-    //             <div class={`z-10 ${isClicked ? 'absolute': 'hidden'} font-normal  rounded-lg`}>
-    //                 <ul class="py-2 text-sm dark:text-gray-400" aria-labelledby="dropdownLargeButton">
-    //                   <li>
-    //                     <Image className='cursor-pointer' src="/assets/flags/usa-flag.png" width="40" height="40" alt="Bandera USA"/>
-    //                   </li>
-    //                 </ul>
-    //             </div>
-    //         </li>
-    //       </ul>
-    //     </div>
-    //   </div>
-    // </nav>
   )
 }
