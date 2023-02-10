@@ -2,14 +2,16 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import { DropdownIcon } from './DropdownIcon'
 import Image from 'next/image';
+import { loadGetInitialProps } from 'next/dist/shared/lib/utils';
 
 export const Navbar = () => {
 
-  const [isClicked, setIsClicked] = useState(false);
+  const [language, setLanguage] = useState(false);
   const [isMobileButtonClicked, setisMobileButtonClicked] = useState(false);
 
+  console.log(language);
   return (
-    <nav className="w-full bg-white shadow">
+    <nav className="w-full text-white shadow">
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -26,7 +28,7 @@ export const Navbar = () => {
                       xmlns="http://www.w3.org/2000/svg"
                       className="w-6 h-6"
                       viewBox="0 0 20 20"
-                      fill="currentColor"
+                      fill="white"
                   >
                       <path
                           fillRule="evenodd"
@@ -40,7 +42,7 @@ export const Navbar = () => {
                       className="w-6 h-6"
                       fill="none"
                       viewBox="0 0 24 24"
-                      stroke="currentColor"
+                      stroke="white"
                       strokeWidth={2}
                   >
                       <path
@@ -57,22 +59,32 @@ export const Navbar = () => {
         <div>
           <div
               className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
-                isMobileButtonClicked ? "block" : "hidden"
+                isMobileButtonClicked ? "block absolute" : "hidden"
               }`}
           >
               <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                  <li className="text-gray-600 hover:text-blue-600">
-                      <a href="javascript:void(0)">Home</a>
+                  <li className="hover:text-blue-600">
+                      <a href="javascript:void(0)">Carta</a>
                   </li>
-                  <li className="text-gray-600 hover:text-blue-600">
-                      <a href="javascript:void(0)">Blog</a>
+                  <li className="hover:text-blue-600">
+                      <a href="javascript:void(0)">Contacto</a>
                   </li>
-                  <li className="text-gray-600 hover:text-blue-600">
-                      <a href="javascript:void(0)">About US</a>
+                  <li className="hover:text-blue-600 flex relative items-center justify-between cursor-pointer">
+                    <Image src="/assets/flags/spain-flag.png" 
+                      width="40" 
+                      height="40" 
+                      alt="Bandera España" 
+                      onClick={() => setLanguage(!language)}
+                    />
+                    <svg className="w-5 h-5 ml-1" fill="white" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
+                    
+                    <div className={`absolute left-0 top-12 ${language ? '' : 'hidden'}`}>
+                      <Image className='cursor-pointer' src="/assets/flags/usa-flag.png" width="40" height="40" alt="Bandera USA"/>
+                    </div>
                   </li>
-                  <li className="text-gray-600 hover:text-blue-600">
-                      <a href="javascript:void(0)">Contact US</a>
-                  </li>
+                  {/* <div className={`${language ? '' : 'hidden'}`}>
+                    <Image className='cursor-pointer' src="/assets/flags/usa-flag.png" width="40" height="40" alt="Bandera USA"/>
+                  </div> */}
               </ul>
           </div>
         </div>
