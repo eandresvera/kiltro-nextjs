@@ -17,7 +17,7 @@ export const Navbar = () => {
   
   // console.log(logo);
   return (
-    <nav className="w-full text-white shadow z-50">
+    <nav className="w-full text-white shadow z-40">
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -69,21 +69,21 @@ export const Navbar = () => {
               }`}
           >
               <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0" >
-                <Link href="/" className='hover:text-blue-600'>
+                <Link href="/" className='hover:text-primary-main'>
                   {lang === 'esp' && 'Carta'}
                   {lang === 'eng' && 'Cart'}
                 </Link>
-                <Link href="/" className='hover:text-blue-600'>
+                <Link href="/" className='hover:text-primary-main'>
                   {lang === 'esp' && 'Contacto'}
                   {lang === 'eng' && 'Contact'}
                 </Link>
-                <li className="hover:text-blue-600 flex relative items-center justify-between cursor-pointer"  onClick={() => setLanguage(!language)}>
+                <li className="hover:text-primary-main flex relative items-center justify-between cursor-pointer"  onClick={() => setLanguage(!language)}>
                   {
                     langs.map( element => ( 
                       element.key === lang && element
                       ))
                   }
-                  <svg className="w-5 h-5 ml-1" fill="white" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
+                  <svg className="w-5 h-5 ml-1 hover:text-primary-main" fill="white" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
                   
                   <div className={`left-0 top-12 ${language ? 'absolute' : 'hidden'}`}>
                     {

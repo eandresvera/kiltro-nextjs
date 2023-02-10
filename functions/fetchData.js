@@ -20,10 +20,6 @@ export async function firstData(){
                   sourceUrl
                 }
               }
-              local1
-              local1Link
-              local2
-              local2Link
               logoImg {
                 node {
                   mediaDetails {
@@ -41,6 +37,18 @@ export async function firstData(){
                   sourceUrl
                 }
               }
+              reserveImg {
+                node {
+                  sizes
+                  sourceUrl
+                }
+              }
+              reserveTextEng
+              reserveTextEsp
+              local1Link
+              local1Name
+              local2Link
+              local2Name
             }
           }
         }`
