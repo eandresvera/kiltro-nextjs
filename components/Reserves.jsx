@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React, { useState } from 'react'
 import { useAppContext } from './context/AppContext'
 import { Modal } from './Modal';
@@ -9,6 +10,7 @@ export const Reserves = () => {
   const { lang, homeData } = useAppContext();
   const [localLinkClicked, setLocalLinkClicked] = useState(null);
 
+  const image = homeData.nodes[0].reserveImg.node.sourceUrl;
   const textEsp = homeData.nodes[0].reserveTextEsp;
   const textEng = homeData.nodes[0].reserveTextEng;
   const local1Name = homeData.nodes[0].local1Name;
@@ -22,10 +24,12 @@ export const Reserves = () => {
     lang === 'eng' && setLocalLinkClicked(`${localLink}english`), setShowModal(true)
   }
   
+  console.log(image);
+
   return (
     <div className='h-full pb-10 text-white bg-black'>
       <div className='flex justify-center py-5'>
-        <h2>IMAGEN</h2>
+        <h2>{ image && <Image src={image} width="400" height="200" alt=""/> }</h2>
       </div>
       <div className='flex justify-center py-5'>
         <h2 className='text-xl px-5'>

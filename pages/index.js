@@ -4,11 +4,13 @@ import { Inter } from '@next/font/google'
 import { Home } from '../components/Home';
 import { Parallax } from '@/components/Parallax';
 import { Reserves } from '@/components/Reserves';
-import { Contact } from './Contact';
+import { Contact } from './contact';
 import { firstData } from '../functions/fetchData'
 import { useAppContext } from '@/components/context/AppContext';
 import { useEffect } from 'react';
 import { Gallery } from '@/components/Gallery';
+import { Footer } from '@/components/Footer';
+import { MainLayout } from '@/components/layout/MainLayout';
 
 export default function Index({ data }) {
   // console.log(data.nodes[0])
@@ -34,12 +36,13 @@ export default function Index({ data }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className='bg-black'>
+      <MainLayout >
         <Home />
         <Parallax />
         <Reserves />
         <Gallery />
-      </main>
+        {/* <Footer /> */}
+      </MainLayout>
     </>
   )
 }

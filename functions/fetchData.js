@@ -49,6 +49,11 @@ export async function firstData(){
               local1Name
               local2Link
               local2Name
+              contactTextEnglish
+              contactTextSpanish
+              email
+              galleryTextEsp(format: RENDERED)
+              galleryTextEng(format: RENDERED)
             }
           }
         }`

@@ -17,7 +17,7 @@ export const Navbar = () => {
   
   // console.log(logo);
   return (
-    <nav className="w-full text-white shadow z-40 uppercase">
+    <nav className="w-full text-white shadow z-40 uppercase absolute">
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -70,13 +70,13 @@ export const Navbar = () => {
           >
               <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0" >
                 <li className='hover:text-primary-main'>
-                  <Link href="/">
+                  <Link href="/cart">
                     {lang === 'esp' && 'Carta'}
                     {lang === 'eng' && 'Cart'}
                   </Link>
                 </li>
                 <li className='hover:text-primary-main'>
-                  <Link href="/">
+                  <Link href="/contact">
                     {lang === 'esp' && 'Contacto'}
                     {lang === 'eng' && 'Contact'}
                   </Link>
