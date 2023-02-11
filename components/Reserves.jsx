@@ -28,7 +28,7 @@ export const Reserves = () => {
         <h2>IMAGEN</h2>
       </div>
       <div className='flex justify-center py-5'>
-        <h2 className='text-xl'>
+        <h2 className='text-xl px-5'>
           {lang === 'esp' && textEsp}
           {lang === 'eng' && textEng}
         </h2>
