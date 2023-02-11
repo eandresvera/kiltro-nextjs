@@ -38,7 +38,7 @@ export default function Index({ data }) {
         <Home />
         <Parallax />
         <Reserves />
-        <Gallery />
+        {/* <Gallery /> */}
       </main>
     </>
   )
