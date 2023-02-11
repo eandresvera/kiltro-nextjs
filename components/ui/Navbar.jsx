@@ -8,7 +8,7 @@ export const Navbar = () => {
   const [language, setLanguage] = useState(false);
   const [isMobileButtonClicked, setisMobileButtonClicked] = useState(false);
   const { lang, homeData, updateLang } = useAppContext();
-  const logo = homeData.nodes[0].logoImg && homeData.nodes[0].logoImg.node.mediaDetails.sizes[2].sourceUrl;
+  const logo = homeData.nodes[0].logoImg ? homeData.nodes[0].logoImg.node.mediaDetails.sizes[2].sourceUrl : false;
 
   const langs = [
     <Image key="eng" className='cursor-pointer' src="/assets/flags/usa-flag.png" width="40" height="40" alt="Bandera USA" onClick={() => updateLang('eng')}/>,
@@ -22,7 +22,9 @@ export const Navbar = () => {
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             <Link href="/">
-              <Image className=' w-16 md:w-full' src={logo} width="50" height="50" alt='Kiltro restobar logo'/>
+              { logo && 
+                <Image className=' w-16 md:w-full' src={logo} width="50" height="50" alt='Kiltro restobar logo'/>
+              }
             </Link>
             <div className="md:hidden">
               <button

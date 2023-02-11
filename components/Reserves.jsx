@@ -23,13 +23,11 @@ export const Reserves = () => {
     lang === 'esp' && setLocalLinkClicked(`${localLink}spanish`), setShowModal(true)
     lang === 'eng' && setLocalLinkClicked(`${localLink}english`), setShowModal(true)
   }
-  
-  console.log(image);
 
   return (
     <div className='h-full pb-10 text-white bg-black'>
       <div className='flex justify-center py-5'>
-        <h2>{ image && <Image src={image} width="400" height="200" alt=""/> }</h2>
+        { image && <Image src={image} width="400" height="400" alt=""/> }
       </div>
       <div className='flex justify-center py-5'>
         <h2 className='text-xl px-5'>

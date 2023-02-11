@@ -4,7 +4,7 @@ import React from 'react'
 
 export const Footer = () => {
   return (
-    <div className='h-full py-10 flex flex-col space-y-5 items-center text-white '>
+    <div className='h-full pt-10 flex flex-col space-y-5 items-center text-white '>
         <h2 className='text-xl'>SIGUENOS</h2>
         <div className='flex space-x-5 pb-10'>
             <Link href="https://web.facebook.com/kiltrorestobar/" target="_blank">
@@ -23,7 +23,7 @@ export const Footer = () => {
 
         <hr className='w-[90%] border-gray-500' />
 
-        <div className='flex justify-center'>
+        <div className='flex justify-center pb-4'>
             Kiltro Restobar © 2023
         </div>
     </div>
