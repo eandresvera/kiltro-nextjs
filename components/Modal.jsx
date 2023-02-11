@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Modal = ({ setShowModal, link }) => {
+export const Modal = ({ setShowModal, localLink }) => {
   return (
     <>
         <div className="flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
@@ -18,7 +18,7 @@ export const Modal = ({ setShowModal, link }) => {
                         </button>
                     </div>
                     <div className="relative p-6 flex-auto">
-                        {<iframe className='h-[70vh]' src={"https://www.covermanager.com/reservation/module_restaurant/restaurante-kiltrorestobarsantantoni/"} ></iframe>}
+                        {<iframe className='h-[70vh]' src={localLink} ></iframe>}
                     </div>
                 </div>
             </div>

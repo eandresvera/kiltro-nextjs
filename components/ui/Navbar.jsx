@@ -17,7 +17,7 @@ export const Navbar = () => {
   
   // console.log(logo);
   return (
-    <nav className="w-full text-white shadow z-40">
+    <nav className="w-full text-white shadow z-40 uppercase">
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -69,14 +69,18 @@ export const Navbar = () => {
               }`}
           >
               <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0" >
-                <Link href="/" className='hover:text-primary-main'>
-                  {lang === 'esp' && 'Carta'}
-                  {lang === 'eng' && 'Cart'}
-                </Link>
-                <Link href="/" className='hover:text-primary-main'>
-                  {lang === 'esp' && 'Contacto'}
-                  {lang === 'eng' && 'Contact'}
-                </Link>
+                <li className='hover:text-primary-main'>
+                  <Link href="/">
+                    {lang === 'esp' && 'Carta'}
+                    {lang === 'eng' && 'Cart'}
+                  </Link>
+                </li>
+                <li className='hover:text-primary-main'>
+                  <Link href="/">
+                    {lang === 'esp' && 'Contacto'}
+                    {lang === 'eng' && 'Contact'}
+                  </Link>
+                </li>
                 <li className="hover:text-primary-main flex relative items-center justify-between cursor-pointer"  onClick={() => setLanguage(!language)}>
                   {
                     langs.map( element => ( 

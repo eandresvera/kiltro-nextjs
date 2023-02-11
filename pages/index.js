@@ -8,6 +8,7 @@ import { Contact } from './Contact';
 import { firstData } from '../functions/fetchData'
 import { useAppContext } from '@/components/context/AppContext';
 import { useEffect } from 'react';
+import { Gallery } from '@/components/Gallery';
 
 export default function Index({ data }) {
   // console.log(data.nodes[0])
@@ -37,6 +38,7 @@ export default function Index({ data }) {
         <Home />
         <Parallax />
         <Reserves />
+        <Gallery />
       </main>
     </>
   )
