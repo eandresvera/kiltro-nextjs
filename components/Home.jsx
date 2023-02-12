@@ -31,20 +31,34 @@ export const Home = () => {
     //       }
     //     </div>
     // </div>
-    <div className="h-screen relative bg-cover">
+    <div className="md:h-screen relative bg-cover">
       <Image src={mainImage.sourceUrl} fill priority alt={mainImage.title}/>
       {/* MOBILE IMAGE */}
-        <div className='h-screen pt-52 flex flex-col justify-center items-center text-white z-10 relative'>
+        <div className='md:h-screen h-[50vh] pt-52 flex flex-col justify-center items-center text-white z-10 relative'>
           {
             miniImg && 
-              <Image  
-                src={miniImg.sourceUrl} 
-                width={300} 
-                height={300}
-                alt={miniImg.title}
-                priority 
+            <>
+              <div className='md:hidden'>
+                <Image  
+                  src={miniImg.sourceUrl} 
+                  width={150} 
+                  height={150}
+                  alt={miniImg.title}
+                  priority 
 
-              />
+                />
+              </div>
+              <div className='hidden md:block'>
+                <Image  
+                  src={miniImg.sourceUrl} 
+                  width={300} 
+                  height={300}
+                  alt={miniImg.title}
+                  priority 
+
+                />
+              </div>
+            </>
           }
         </div>
     </div>

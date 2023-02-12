@@ -20,7 +20,7 @@ export const Navbar = () => {
   ]
   
   return (
-    <nav className="w-full text-white shadow z-40 uppercase absolute">
+    <nav className="w-full font-extrabold md:font-normal text-white shadow z-40 uppercase absolute">
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -39,7 +39,7 @@ export const Navbar = () => {
                       xmlns="http://www.w3.org/2000/svg"
                       className="w-6 h-6"
                       viewBox="0 0 20 20"
-                      fill="white"
+                      fill="#3fe0c7"
                   >
                       <path
                           fillRule="evenodd"
@@ -50,10 +50,10 @@ export const Navbar = () => {
                 ) : (
                   <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="w-6 h-6"
+                      className="w-6 h-6 "
                       fill="none"
                       viewBox="0 0 24 24"
-                      stroke="white"
+                      stroke="#3fe0c7"
                       strokeWidth={2}
                   >
                       <path
