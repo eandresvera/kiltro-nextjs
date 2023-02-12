@@ -12,7 +12,7 @@ export const Modal = ({ setShowModal, localLink }) => {
                             className="bg-transparent border-0 text-black float-right"
                             onClick={() => setShowModal(false)}
                         >
-                            <span className="text-black opacity-7 h-6 w-6 text-xl block bg-gray-400 py-0 rounded-full">
+                            <span className="text-black opacity-7 h-8 w-8 text-xl block bg-gray-400 py-0 rounded-full">
                                 x
                             </span>
                         </button>
