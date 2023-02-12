@@ -9,8 +9,6 @@ export const Gallery = () => {
     const imgs = homeData.nodes[0].galleryImgs.nodes;
     const textEng = homeData.nodes[0].galleryTextEng;
     const textEsp = homeData.nodes[0].galleryTextEsp;
-    
-    console.log(imgs);
 
     return (
         <section className="overflow-hidden text-white pb-10 pt-10">

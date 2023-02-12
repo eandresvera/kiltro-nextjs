@@ -4,7 +4,7 @@ export const DropdownIcon = () => {
 
     const [isClicked, setIsClicked] = useState(false);
 
-    console.log(isClicked);
+    // console.log(isClicked);
 
   return (
     <div className='relative'>

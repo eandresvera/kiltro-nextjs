@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-export const Parallax = ({ parallaxImg }) => {
+export const Parallax = ({ parallaxImg, text=true }) => {
 
     const imageRef = useRef(null);
   
@@ -26,7 +26,7 @@ export const Parallax = ({ parallaxImg }) => {
       ref={imageRef}
       >
       <div className='text-white h-full font-bold text-xl lg:text-4xl flex justify-center items-center mx-5'>
-        Lorem ipsum, dolor sit amet consec adipisicing elit. 
+        { text && 'Lorem ipsum, dolor sit amet consec adipisicing elit.' }
       </div>
     </div>
   )

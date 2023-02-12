@@ -7,6 +7,8 @@ export const Home = () => {
 
   const { homeData } = useAppContext();
   
+  console.log('Home: ', homeData);
+
   const miniImg = (homeData.nodes[0].firstMiniImg !== null) && homeData.nodes[0].firstMiniImg.node;
   const mainImage = (homeData.nodes[0].firstImg !== null) && homeData.nodes[0].firstImg.node;
 

@@ -8,14 +8,17 @@ export const Navbar = () => {
   const [language, setLanguage] = useState(false);
   const [isMobileButtonClicked, setisMobileButtonClicked] = useState(false);
   const { lang, homeData, updateLang } = useAppContext();
-  const logo = homeData.nodes[0].logoImg ? homeData.nodes[0].logoImg.node.mediaDetails.sizes[2].sourceUrl : false;
+
+  // const logo = homeData.nodes[0].logoImg ? homeData.nodes[0].logoImg.node.mediaDetails.sizes[2].sourceUrl : false;
+  const logo = homeData.nodes[0].logoImg ? homeData.nodes[0].logoImg.node : false;
+  
+  // console.log(logo.sourceUrl);
 
   const langs = [
     <Image key="eng" className='cursor-pointer' src="/assets/flags/usa-flag.png" width="40" height="40" alt="Bandera USA" onClick={() => updateLang('eng')}/>,
     <Image key="esp" className='cursor-pointer' src="/assets/flags/spain-flag.png" width="40" height="40" alt="Bandera España" onClick={() => updateLang('esp')}/>,
   ]
   
-  // console.log(logo);
   return (
     <nav className="w-full text-white shadow z-40 uppercase absolute">
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
@@ -23,7 +26,7 @@ export const Navbar = () => {
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             <Link href="/">
               { logo && 
-                <Image className=' w-16 md:w-full' src={logo} width="50" height="50" alt='Kiltro restobar logo'/>
+                <Image className=' w-16 md:w-32' src={logo.sourceUrl} sizes={logo.sizes} srcSet={logo.srcSet} width="50" height="50" alt='Kiltro restobar logo'/>
               }
             </Link>
             <div className="md:hidden">

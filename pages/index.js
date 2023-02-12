@@ -1,15 +1,12 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import { Home } from '../components/Home';
 import { Parallax } from '@/components/Parallax';
 import { Reserves } from '@/components/Reserves';
-import { Contact } from './contact';
-import { firstData } from '../functions/fetchData'
+import { fetchData } from '../functions/fetchData'
 import { useAppContext } from '@/components/context/AppContext';
 import { useEffect } from 'react';
 import { Gallery } from '@/components/Gallery';
-import { Footer } from '@/components/Footer';
 import { MainLayout } from '@/components/layout/MainLayout';
 
 export default function Index({ data }) {
@@ -18,13 +15,14 @@ export default function Index({ data }) {
   const parallaxImg = data.nodes[0].parallaxImg ? data.nodes[0].parallaxImg.node.sourceUrl : '';
 
   const { homeData, updateHomeData } = useAppContext();
-
+  
+  // console.log('index: ',data);
   useEffect(() => {
     updateHomeData(data);
     
   }, [updateHomeData, data])
   
-  if (homeData === null) {
+  if (!homeData) {
     return null;
   }
 
@@ -46,9 +44,8 @@ export default function Index({ data }) {
   )
 }
 
-// HOME PAGE DATA ONLY ( EXCLUDE CONTACT AND CART PAGE'S DATA )
 export async function getStaticProps (){
-  const data = await firstData();
+  const data = await fetchData();
 
   return {
     props: { data }
