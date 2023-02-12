@@ -36,7 +36,7 @@ export default function Index({ data }) {
       </Head>
       <MainLayout >
         <Home />
-        <Parallax />
+        <Parallax text={false}/>
         <Reserves />
         <Gallery />
       </MainLayout>
