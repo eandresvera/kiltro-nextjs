@@ -54,14 +54,10 @@ export async function fetchData( pageQuery=false ){
           }
           reserveImg {
             node {
-              mediaDetails {
-                sizes {
-                  width
-                  sourceUrl
-                  name
-                  height
-                }
-              }
+              title
+              srcSet
+              sizes
+              sourceUrl
             }
           }
           reserveTextEng

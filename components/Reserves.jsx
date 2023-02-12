@@ -10,13 +10,15 @@ export const Reserves = () => {
   const { lang, homeData } = useAppContext();
   const [localLinkClicked, setLocalLinkClicked] = useState(null);
 
-  const image = homeData.nodes[0].reserveImg.node.sourceUrl;
+  const image = homeData.nodes[0].reserveImg !== null && homeData.nodes[0].reserveImg.node;
   const textEsp = homeData.nodes[0].reserveTextEsp;
   const textEng = homeData.nodes[0].reserveTextEng;
   const local1Name = homeData.nodes[0].local1Name;
   const local1Link = homeData.nodes[0].local1Link;
   const local2Name = homeData.nodes[0].local2Name;
   const local2Link = homeData.nodes[0].local2Link;
+
+  console.log(image);
 
   const handleOnClick = ( localLink ) => {
     setLocalLinkClicked(`${localLink}spanish`)
@@ -25,9 +27,9 @@ export const Reserves = () => {
   }
 
   return (
-    <div className='h-full pb-10 text-white bg-black'>
-      <div className='flex justify-center py-5'>
-        { image && <Image src={image} width="400" height="400" alt=""/> }
+    <div className='h-full text-white bg-black pt-24 pb-28'>
+      <div className='flex justify-center py-5 '>
+        { image && <Image src={image.sourceUrl} width="250" height="250" alt=""/> }
       </div>
       <div className='flex justify-center py-5'>
         <h2 className='text-xl px-5'>

@@ -74,3 +74,20 @@ a {
 .social-media-icons:hover {
   fill: #3fe0c7;
 }
+
+
+
+
+
+/* @media screen and (max-width: 768px) {
+
+ .nav-links {
+    opacity: 1;
+   transition: all 500ms ease-in-out;
+  }
+}   */
+/*  Media Query 768 End  */
+/* .nav-activ {
+  transform: translateX(0);
+}
+ */
