@@ -21,7 +21,7 @@ export const Navbar = () => {
   
   return (
     <nav className="w-full font-extrabold md:font-normal text-white shadow z-40 uppercase absolute">
-      <div className="justify-between w-full mx-auto fixed md:items-center md:flex md:px-8">
+      <div className="justify-between w-full mx-auto md:bg-black fixed md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center px-4 bg-black justify-between py-3 md:py-4 md:block">
             <Link href="/">
@@ -70,10 +70,10 @@ export const Navbar = () => {
         <div>
           <div
               className={`flex-1 justify-self-center pb-3 md:block md:pb-0 md:mt-0 ${
-                isMobileButtonClicked ? "flex w-[75vw] h-[100vh] p-10 bg-black nav-links opacity-100 transition-opacity duration-[600ms]" : "hidden opacity-0 "
+                isMobileButtonClicked ? " w-[75vw] h-[100vh] p-10 bg-black nav-links opacity-100 transition-opacity duration-[600ms]" : " opacity-0 md:opacity-100"
               }`}
           >
-              <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0" >
+              <ul className="items-center justify-center space-y-8 md:flex md:space-x-14 md:space-y-0" >
                 <li className='hover:text-primary-main'>
                   <Link href="/cart">
                     {lang === 'esp' && 'Carta'}
