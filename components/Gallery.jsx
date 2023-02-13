@@ -19,7 +19,7 @@ export const Gallery = () => {
       
     return (
         <section className="overflow-hidden text-white pb-10 pt-10">
-            <h2 className='flex justify-center text-xl px-5'>
+            <h2 className='flex justify-center text-xl px-5' data-aos="zoom-out">
                 { lang === 'esp' && textEsp }
                 { lang === 'eng' && textEng }
             </h2>
@@ -29,7 +29,7 @@ export const Gallery = () => {
                         imgs.map(img => (
                             <div className="flex flex-wrap w-1/3" key={img.title}>
                                 <div className="w-full p-1 md:p-2">
-                                    <div className='relative h-48 md:h-80 w-full' data-aos="zoom-out">
+                                    <div className='relative h-48 md:h-80 w-full'>
                                         <Image 
                                             className="block  object-cover object-center w-full h-80 rounded-lg"  
                                             src={img.sourceUrl} 

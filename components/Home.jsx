@@ -48,7 +48,7 @@ export const Home = (props) => {
               </div>
             </>
             :
-            <div className=' border-b-[6px] text-2xl md:text-3xl text-animation text-white border-primary-main tracking-[6px] font-bold transition duration-200 hover:text-primary-main cursor-pointer py-4' onClick={handleOnClick}>
+            <div className='border-b-2 md:border-b-[6px] text-2xl md:text-3xl text-animation text-white border-primary-main tracking-[6px] font-bold transition duration-200 hover:text-primary-main cursor-pointer py-2' onClick={handleOnClick}>
               <span>R</span>
               <span>E</span>
               <span>S</span>
