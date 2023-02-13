@@ -1,6 +1,7 @@
+import Aos from 'aos';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useAppContext } from './context/AppContext'
 
 export const Gallery = () => {
@@ -10,6 +11,12 @@ export const Gallery = () => {
     const textEng = homeData.nodes[0].galleryTextEng;
     const textEsp = homeData.nodes[0].galleryTextEsp;
 
+    useEffect(() => {
+        Aos.init({ duration: 1000 });
+      }, [])
+      
+
+      
     return (
         <section className="overflow-hidden text-white pb-10 pt-10">
             <h2 className='flex justify-center text-xl px-5'>
@@ -22,7 +29,7 @@ export const Gallery = () => {
                         imgs.map(img => (
                             <div className="flex flex-wrap w-1/3" key={img.title}>
                                 <div className="w-full p-1 md:p-2">
-                                    <div className='relative h-48 md:h-80 w-full'>
+                                    <div className='relative h-48 md:h-80 w-full' data-aos="zoom-out">
                                         <Image 
                                             className="block  object-cover object-center w-full h-80 rounded-lg"  
                                             src={img.sourceUrl} 
