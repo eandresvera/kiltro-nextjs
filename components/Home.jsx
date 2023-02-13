@@ -48,8 +48,15 @@ export const Home = (props) => {
               </div>
             </>
             :
-            <div className=' border-b-[6px] border-primary-main tracking-[6px] font-bold transition duration-200 hover:text-primary-main cursor-pointer py-4 text-white' onClick={handleOnClick}>
-              RESERVAR
+            <div className=' border-b-[6px] text-2xl md:text-3xl text-animation text-white border-primary-main tracking-[6px] font-bold transition duration-200 hover:text-primary-main cursor-pointer py-4' onClick={handleOnClick}>
+              <span>R</span>
+              <span>E</span>
+              <span>S</span>
+              <span>E</span>
+              <span>R</span>
+              <span>V</span>
+              <span>A</span>
+              <span>R</span>
             </div>
             // <PrimaryButton lang={lang} onClick={handleOnClick}/>
           }

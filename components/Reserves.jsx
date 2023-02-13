@@ -1,9 +1,10 @@
+import Aos from 'aos';
 import Image from 'next/image';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useAppContext } from './context/AppContext'
 import { Modal } from './Modal';
 import { PrimaryButton } from './ui/PrimaryButton'
-
+import "aos/dist/aos.css"
 export const Reserves = () => {
 
   const [showModal, setShowModal] = useState(false);
@@ -26,13 +27,18 @@ export const Reserves = () => {
     lang === 'eng' && setLocalLinkClicked(`${localLink}english`), setShowModal(true)
   }
 
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, [])
+  
+
   return (
     <div className='h-full text-white bg-black pt-24 pb-28' id='reserves'>
       <div className='flex justify-center py-5 '>
         { image && <Image src={image.sourceUrl} width="250" height="250" alt=""/> }
       </div>
-      <div className='flex justify-center py-5'>
-        <h2 className='text-xl px-5'>
+      <div className='flex justify-center py-5' data-aos="fade-up" data-aos-delay="10">
+        <h2 className='text-xl px-5 text-animation'>
           {lang === 'esp' && textEsp}
           {lang === 'eng' && textEng}
         </h2>

@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { Spinner } from './ui/Spinner';
 
 export const Modal = ({ setShowModal, localLink }) => {
+
+    const [iFrameIsReady, setIFrameIsReady] = useState(false);
+  
   return (
     <>
         <div className="flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
@@ -18,7 +22,9 @@ export const Modal = ({ setShowModal, localLink }) => {
                         </button>
                     </div>
                     <div className="relative p-6 flex-auto">
-                        {<iframe className='h-[70vh]' src={localLink} ></iframe>}
+
+                        { !iFrameIsReady && <Spinner /> }
+                        {<iframe className='h-[70vh]' src={localLink} onLoad={() => setIFrameIsReady(true)}></iframe>}
                     </div>
                 </div>
             </div>
