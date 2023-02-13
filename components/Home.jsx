@@ -19,8 +19,8 @@ export const Home = (props) => {
   }
 
   return (
-    <div className="md:h-screen relative bg-cover opacity-80 fade-in">
-      <Image src={mainImage.sourceUrl} fill priority alt={mainImage.title}/>
+    <div className="md:h-screen relative bg-cover fade-in">
+      <Image src={mainImage.sourceUrl} fill priority alt={mainImage.title} className=" opacity-70"/>
       {/* MOBILE IMAGE */}
         <div className='md:h-screen h-[50vh] pt-52 flex flex-col justify-center items-center text-white z-10 relative'>
           {
@@ -49,14 +49,31 @@ export const Home = (props) => {
             </>
             :
             <div className='border-b-2 md:border-b-[6px] text-2xl md:text-3xl text-animation text-white border-primary-main tracking-[6px] font-bold transition duration-200 hover:text-primary-main cursor-pointer py-2' onClick={handleOnClick}>
-              <span>R</span>
-              <span>E</span>
-              <span>S</span>
-              <span>E</span>
-              <span>R</span>
-              <span>V</span>
-              <span>A</span>
-              <span>R</span>
+              {
+                lang === 'esp' &&
+                <>
+                  <span>R</span>
+                  <span>E</span>
+                  <span>S</span>
+                  <span>E</span>
+                  <span>R</span>
+                  <span>V</span>
+                  <span>A</span>
+                  <span>R</span>
+                </>
+              }
+              {
+                lang === 'eng' &&
+                <>
+                  <span>R</span>
+                  <span>E</span>
+                  <span>S</span>
+                  <span>E</span>
+                  <span>R</span>
+                  <span>V</span>
+                  <span>E</span>
+                </>
+              }
             </div>
             // <PrimaryButton lang={lang} onClick={handleOnClick}/>
           }

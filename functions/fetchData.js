@@ -42,14 +42,10 @@ export async function fetchData( pageQuery=false ){
           }
           parallaxImg {
             node {
-              mediaDetails {
-                sizes {
-                  width
-                  sourceUrl
-                  height
-                  name
-                }
-              }
+              title
+              srcSet
+              sizes
+              sourceUrl
             }
           }
           reserveImg {
@@ -80,6 +76,10 @@ export async function fetchData( pageQuery=false ){
           }
           emailLocal1
           emailLocal2
+          facebook
+          instagram
+          tAdvisor
+          twitter
         }
       }
     }`
