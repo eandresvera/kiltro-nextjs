@@ -37,7 +37,7 @@ export const Reserves = () => {
       <div className='flex justify-center py-5 '>
         { image && <Image src={image.sourceUrl} width="250" height="250" alt=""/> }
       </div>
-      <div className='flex justify-center py-5' data-aos="fade-up" data-aos-delay="10">
+      <div className='flex justify-center py-5' data-aos="zoom-out" data-aos-delay="10">
         <h2 className='text-xl px-5 text-animation'>
           {lang === 'esp' && textEsp}
           {lang === 'eng' && textEng}
