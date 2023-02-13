@@ -15,7 +15,7 @@ export default function Index({ data }) {
   const parallaxImg = data.nodes[0].parallaxImg ? data.nodes[0].parallaxImg.node.sourceUrl : '';
 
   const { homeData, updateHomeData } = useAppContext();
-  
+
   // console.log('index: ',data);
   useEffect(() => {
     updateHomeData(data);

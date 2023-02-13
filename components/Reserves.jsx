@@ -18,7 +18,7 @@ export const Reserves = () => {
   const local2Name = homeData.nodes[0].local2Name;
   const local2Link = homeData.nodes[0].local2Link;
 
-  console.log(image);
+  // console.log(image);
 
   const handleOnClick = ( localLink ) => {
     setLocalLinkClicked(`${localLink}spanish`)
@@ -27,7 +27,7 @@ export const Reserves = () => {
   }
 
   return (
-    <div className='h-full text-white bg-black pt-24 pb-28'>
+    <div className='h-full text-white bg-black pt-24 pb-28' id='reserves'>
       <div className='flex justify-center py-5 '>
         { image && <Image src={image.sourceUrl} width="250" height="250" alt=""/> }
       </div>

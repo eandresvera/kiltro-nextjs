@@ -1,11 +1,18 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import { useAppContext } from './context/AppContext'
 
 export const Footer = () => {
+
+    const { lang } = useAppContext();
+
   return (
     <div className='h-full pt-10 flex flex-col space-y-5 items-center text-white '>
-        <h2 className='text-xl'>SIGUENOS</h2>
+        <h2 className='text-xl'>
+            { lang === 'esp' && 'SÍGUENOS' }
+            { lang === 'eng' && 'FOLLOW US' }
+        </h2>
         <div className='flex space-x-5 pb-10'>
             <Link href="https://web.facebook.com/kiltrorestobar/" target="_blank">
                 <svg className='social-media-icons' xmlns="http://www.w3.org/2000/svg" viewBox="0,0,256,256" width="45px" height="45px" fill="#ffffff"><g fillRule="nonzero" stroke="none" strokeWidth="1" strokeLinecap="butt" strokeLinejoin="miter" strokeMiterlimit="10" strokeDasharray="" strokeDashoffset="0" fontFamily="none" fontWeight="none" fontSize="none" textAnchor="none"><g transform="scale(5.12,5.12)"><path d="M25,2c-12.682,0 -23,10.317 -23,23c0,12.683 10.318,23 23,23c12.683,0 23,-10.317 23,-23c0,-12.683 -10.317,-23 -23,-23zM32,16h-3.29c-1.938,0 -2.71,0.455 -2.71,1.806v3.194h6l-1,5h-5v13h-6v-13h-3v-5h3v-2.774c0,-4.225 1.686,-7.226 6.581,-7.226c2.622,0 5.419,1 5.419,1z"></path></g></g></svg>
