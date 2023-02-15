@@ -17,7 +17,7 @@ export const Input = ({ lang, name, type=false, placeHolder, labelEsp, labelEng,
                 id="message" 
                 name="message"
                 rows="4" 
-                className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border focus:ring-primary-main focus:border-primary-main "
+                className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border-2 focus:outline-none focus:ring-primary-main focus:border-primary-main "
                 onChange={e => onChange(e)}
                 value={formData.message}
             >
@@ -27,7 +27,7 @@ export const Input = ({ lang, name, type=false, placeHolder, labelEsp, labelEng,
                 type={type}
                 id={name} 
                 name={name}
-                className="bg-gray-50 text-sm rounded-lg block w-full p-2.5  text-black focus:ring-primary-main focus:border-primary-main" 
+                className="bg-gray-50 text-sm rounded-lg block w-full p-2.5  text-black border-2 focus:outline-none focus:ring-primary-main focus:border-primary-main" 
                 placeholder={placeHolder} 
                 onChange={ e => onChange(e) } 
                 value={formData[name]}
