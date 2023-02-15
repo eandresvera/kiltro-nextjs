@@ -82,7 +82,7 @@ const Contact = ({ data }) => {
     return(
         <MainLayout>
             <ToastContainer />
-            {/* <div className="min-h-screen text-white">
+            <div className="min-h-screen text-white">
 
                 <h2 className="flex pt-24 justify-center py-5 font-bold uppercase md:text-2xl">
                     { lang === 'esp' && `Estamos aquí para ayudarte` }
@@ -159,7 +159,7 @@ const Contact = ({ data }) => {
                         }
                     </button>
                 </form>
-            </div> */}
+            </div>
             
         </MainLayout>
     )
