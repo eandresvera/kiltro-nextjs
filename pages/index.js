@@ -10,10 +10,6 @@ import { Gallery } from '@/components/Gallery';
 import { MainLayout } from '@/components/layout/MainLayout';
 
 export default function Index({ data }) {
-  // console.log(data.nodes[0])
-
-  const logo = data.nodes[0].logoImg && data.nodes[0].logoImg.node.mediaDetails;
-  const parallaxImg = data.nodes[0].parallaxImg ? data.nodes[0].parallaxImg.node.sourceUrl : '';
 
   const { homeData, updateHomeData } = useAppContext();
 

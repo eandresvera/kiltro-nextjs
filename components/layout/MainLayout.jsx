@@ -7,7 +7,7 @@ export const MainLayout = ({children}) => {
   return (
     <div className={`bg-black`}>
         <Navbar />
-            { children }
+          { children }
         <Footer />
     </div>
   )

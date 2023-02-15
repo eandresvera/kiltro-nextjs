@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image';
 import { useAppContext } from '../context/AppContext';
@@ -9,11 +9,8 @@ export const Navbar = () => {
   const [isMobileButtonClicked, setisMobileButtonClicked] = useState(false);
   const { lang, homeData, updateLang } = useAppContext();
 
-  // const logo = homeData.nodes[0].logoImg ? homeData.nodes[0].logoImg.node.mediaDetails.sizes[2].sourceUrl : false;
   const logo = homeData.nodes[0].logoImg ? homeData.nodes[0].logoImg.node : false;
   
-  // console.log(logo.sourceUrl);
-
   const langs = [
     <Image key="eng" className='cursor-pointer' src="/assets/flags/usa-flag.png" width="40" height="40" alt="Bandera USA" onClick={() => updateLang('eng')}/>,
     <Image key="esp" className='cursor-pointer' src="/assets/flags/spain-flag.png" width="40" height="40" alt="Bandera España" onClick={() => updateLang('esp')}/>,
