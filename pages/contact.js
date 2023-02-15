@@ -82,25 +82,12 @@ const Contact = ({ data }) => {
     return(
         <MainLayout>
             <ToastContainer />
-            <div className="min-h-screen text-white">
-                {/* <div className="h-[30vh] lg:h-80 flex justify-center items-center bg-[url('https://images.unsplash.com/photo-1577563908411-5077b6dc7624?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')] bg-contain"></div> */}
-                {/* <div className="h-[10vh] lg:h-40 flex justify-center items-center bg-contain"></div> */}
+            {/* <div className="min-h-screen text-white">
+
                 <h2 className="flex pt-24 justify-center py-5 font-bold uppercase md:text-2xl">
                     { lang === 'esp' && `Estamos aquí para ayudarte` }
                     { lang === 'eng' && 'We are here to help' }
                 </h2>
-
-                {/* <div>
-                    {
-                        formErrors && 
-                        Object.entries(formErrors).map( error => (
-                            <>
-                            <span className="text-white" key={error[0]}> {error[0]} - {error[1]} </span>
-                            <br />
-                            </>
-                        ))
-                    }
-                </div> */}
                 <form className=" mx-10 md:mx-64 mt-10 xl:mx-96" onSubmit={handleOnSubmit}>
                     <div className="mb-6">
                         <label htmlFor="kiltro" className="block mb-2 text-sm font-medium text-white">
@@ -172,7 +159,7 @@ const Contact = ({ data }) => {
                         }
                     </button>
                 </form>
-            </div>
+            </div> */}
             
         </MainLayout>
     )
