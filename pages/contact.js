@@ -59,7 +59,6 @@ const Contact = ({ data }) => {
                 if (req.status === 250) {
                     notify();
                     setIsLoading(false);
-                    console.log('exito')
                 }
             } catch (e) {
                 console.log(e);
@@ -75,8 +74,10 @@ const Contact = ({ data }) => {
     }, [updateHomeData, data])
       
     if (!homeData) {
-    return null;
+        return null;
     }
+
+    // console.log(formData);
     
     return(
         <MainLayout>
@@ -89,7 +90,7 @@ const Contact = ({ data }) => {
                     { lang === 'eng' && 'We are here to help' }
                 </h2>
 
-                <div>
+                {/* <div>
                     {
                         formErrors && 
                         Object.entries(formErrors).map( error => (
@@ -99,7 +100,7 @@ const Contact = ({ data }) => {
                             </>
                         ))
                     }
-                </div>
+                </div> */}
                 <form className=" mx-10 md:mx-64 xl:mx-96 mt-10" onSubmit={handleOnSubmit}>
                     <div className="mb-6">
                         <label htmlFor="kiltro" className="block mb-2 text-sm font-medium text-white">
