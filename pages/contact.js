@@ -61,9 +61,11 @@ const Contact = ({ data }) => {
                     setIsLoading(false);
                     console.log('exito')
                 }
-              } catch (e) {
+            } catch (e) {
                 console.log(e);
-              }
+            }
+        }else{
+            setIsLoading(false);
         }
     }
     
@@ -110,8 +112,8 @@ const Contact = ({ data }) => {
                             className="bg-gray-50 border border-gray-300 text-black text-sm rounded-lg focus:ring-primary-main focus:border-primary-main block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-main dark:focus:border-primary-main"
                             onChange={e => handleOnChange(e)} 
                         >
-                            <option >Kiltro Sant Antoni</option>
-                            <option>Kiltro Gracia</option>
+                            <option value="sant antoni">Kiltro Sant Antoni</option>
+                            <option value="gracia">Kiltro Gracia</option>
                         </select>
                     </div>
                     <Input 
