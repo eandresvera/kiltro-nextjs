@@ -3,7 +3,7 @@ import { Input } from "@/components/form/Input";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Spinner } from "@/components/ui/Spinner";
 import { fetchData } from "@/functions/fetchData";
-// import sendEmail from "@/lib/sendEmail";
+import sendEmail from "@/lib/sendEmail";
 import { useEffect, useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -52,20 +52,20 @@ const Contact = ({ data }) => {
         // RESET ERRORS
         setFormErrors(false)
 
-        // if ( checkErrors() ) {
+        if ( checkErrors() ) {
             
-        //     try {
-        //         const req = await sendEmail(formData.email, '¡Nueva pregunta desde kiltrobcn.com!', formData.message, formData.phone, formData.name, formData.kiltro);
-        //         if (req.status === 250) {
-        //             notify();
-        //             setIsLoading(false);
-        //         }
-        //     } catch (e) {
-        //         console.log(e);
-        //     }
-        // }else{
-        //     setIsLoading(false);
-        // }
+            try {
+                const req = await sendEmail(formData.email, '¡Nueva pregunta desde kiltrobcn.com!', formData.message, formData.phone, formData.name, formData.kiltro);
+                if (req.status === 250) {
+                    notify();
+                    setIsLoading(false);
+                }
+            } catch (e) {
+                console.log(e);
+            }
+        }else{
+            setIsLoading(false);
+        }
     }
     
     useEffect(() => {
