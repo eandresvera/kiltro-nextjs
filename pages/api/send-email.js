@@ -7,14 +7,14 @@ export default function handler(req, res) {
   const message = {
     from: 'noreply@kiltrobcn.com',
     to: emailReciever,
-    subject: 'req.body.subject',
+    subject: req.body.subject,
     html: `
     <h2 align="center">¡Has recibido una pregunta desde la página web!</h2>
-    <p>Local: </p>
-    <p>Nombre: </p>
-    <p>Correo electrónico: </p>
-    <p>Teléfono: </p>
-    <p>Mensaje: </p>
+    <p>Local: ${req.body.local}</p>
+    <p>Nombre: ${req.body.name}</p>
+    <p>Correo electrónico: ${req.body.email}</p>
+    <p>Teléfono: ${req.body.phone}</p>
+    <p>Mensaje: ${req.body.message}</p>
     `,
   };
 
