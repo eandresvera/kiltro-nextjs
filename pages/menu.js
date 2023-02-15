@@ -4,22 +4,22 @@ import { fetchData } from '@/functions/fetchData';
 import React, { useEffect } from 'react'
 import Image from 'next/image';
 
-const Menu = ({ data }) => {
+const Menu = () => {
 
-  const { homeData, updateHomeData } = useAppContext();
+  // const { homeData, updateHomeData } = useAppContext();
   
-  useEffect(() => {
-    updateHomeData(data);
+  // useEffect(() => {
+  //   updateHomeData(data);
     
-  }, [updateHomeData, data])
+  // }, [updateHomeData, data])
   
-  if (!homeData) {
-    return null;
-  }
+  // if (!homeData) {
+  //   return null;
+  // }
 
-  const cartImgs = homeData.nodes[0].cartImgs.nodes;
+  // const cartImgs = homeData.nodes[0].cartImgs.nodes;
   
-  console.log(cartImgs);
+  // console.log(cartImgs);
 
   return (
     <div></div>
