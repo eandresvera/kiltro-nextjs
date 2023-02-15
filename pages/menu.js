@@ -23,7 +23,7 @@ const Menu = ({ data }) => {
 
   return (
     <MainLayout>
-      <div className="min-h-screen text-white">
+      {/* <div className="min-h-screen text-white">
         <div className="h-[300px] md:h-[500px] md:bg-[url('https://admin.kiltrobcn.com/wp-content/uploads/2023/02/kiltro_comida.jpg')] bg-cover bg-no-repeat relative fade-in" >
           <Image className='md:hidden fade-in' src="https://admin.kiltrobcn.com/wp-content/uploads/2023/02/kiltro_comida.jpg" alt="" fill/>
         </div>
@@ -42,7 +42,7 @@ const Menu = ({ data }) => {
             
           }
         </div>
-      </div>
+      </div> */}
     </MainLayout>
   )
 }
