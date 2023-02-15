@@ -74,7 +74,7 @@ export const Navbar = () => {
           >
               <ul className="items-center justify-center space-y-8 md:flex md:space-x-14 md:space-y-0" >
                 <li className='hover:text-primary-main'>
-                  <Link href="/cart">
+                  <Link href="/menu">
                     {lang === 'esp' && 'Carta'}
                     {lang === 'eng' && 'Menu'}
                   </Link>

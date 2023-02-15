@@ -5,7 +5,7 @@ import React, { useEffect } from 'react'
 import { Parallax } from '@/components/Parallax'
 import Image from 'next/image';
 
-const Cart = ({ data }) => {
+const Menu = ({ data }) => {
 
   const { homeData, updateHomeData } = useAppContext();
   
@@ -48,7 +48,7 @@ const Cart = ({ data }) => {
   )
 }
 
-export default Cart;
+export default Menu;
 
 export async function getStaticProps (){
     const data = await fetchData();
