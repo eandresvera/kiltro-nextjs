@@ -76,7 +76,7 @@ export const Navbar = () => {
                 <li className='hover:text-primary-main'>
                   <Link href="/cart">
                     {lang === 'esp' && 'Carta'}
-                    {lang === 'eng' && 'Cart'}
+                    {lang === 'eng' && 'Menu'}
                   </Link>
                 </li>
                 <li className='hover:text-primary-main'>
