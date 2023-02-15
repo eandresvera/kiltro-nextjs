@@ -35,7 +35,7 @@ export const Reserves = () => {
   return (
     <div className='h-full text-white bg-black pt-24 pb-28' id='reserves'>
       <div className='flex justify-center py-5 '>
-        { image && <Image src={image.sourceUrl} width="250" height="250" alt=""/> }
+        { image && <Image src={image.sourceUrl} width="250" height="250" alt="" priority/> }
       </div>
       <div className='flex justify-center py-5' data-aos="zoom-out" data-aos-delay="10">
         <h2 className='text-xl px-5 text-animation'>

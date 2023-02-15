@@ -23,7 +23,7 @@ export const Navbar = () => {
           <div className="flex items-center px-4 bg-black justify-between py-3 md:py-4 md:block">
             <Link href="/">
               { logo && 
-                <Image className=' w-16 md:w-20' src={logo.sourceUrl} sizes={logo.sizes} srcSet={logo.srcSet} width="50" height="50" alt='Kiltro restobar logo'/>
+                <Image className=' w-16 md:w-20' priority src={logo.sourceUrl} sizes={logo.sizes} srcSet={logo.srcSet} width="50" height="50" alt='Kiltro restobar logo'/>
               }
             </Link>
             <div className="md:hidden">
