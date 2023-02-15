@@ -2,11 +2,11 @@ const nodemailer = require('nodemailer');
 
 export default function handler(req, res) {
 
-  const emailReciever = req.body.local === 'Sant Antoni' ? 'santantoni@kiltrobcn.com' : 'gracia@kiltrobcn.com';
+  // const emailReciever = req.body.local === 'Sant Antoni' ? 'santantoni@kiltrobcn.com' : 'gracia@kiltrobcn.com';
 
   const message = {
     from: 'noreply@kiltrobcn.com',
-    to: emailReciever,
+    to: 'eandres.vera@gmail.com',
     subject: req.body.subject,
     html: `
     <h2 align="center">¡Has recibido una pregunta desde la página web!</h2>
