@@ -100,12 +100,12 @@ const Contact = ({ data }) => {
                 </div>
                 <form className=" mx-10 md:mx-64 xl:mx-96 mt-10" onSubmit={handleOnSubmit}>
                     <div className="mb-6">
-                        <label htmlFor="countries" className="block mb-2 text-sm font-medium text-white">
+                        <label htmlFor="kiltro" className="block mb-2 text-sm font-medium text-white">
                             { lang === 'esp' && `Selecciona tu Kiltro restobar` }
                             { lang === 'eng' && 'Select your Kiltro restobar' }
                         </label>
                         <select 
-                            id="countries" 
+                            id="kiltro" 
                             name="kiltro"
                             className="bg-gray-50 border border-gray-300 text-black text-sm rounded-lg focus:ring-primary-main focus:border-primary-main block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-main dark:focus:border-primary-main"
                             onChange={e => handleOnChange(e)} 
