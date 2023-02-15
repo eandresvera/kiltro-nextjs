@@ -2,7 +2,6 @@ import { useAppContext } from '@/components/context/AppContext';
 import { MainLayout } from '@/components/layout/MainLayout';
 import { fetchData } from '@/functions/fetchData';
 import React, { useEffect } from 'react'
-import { Parallax } from '@/components/Parallax'
 import Image from 'next/image';
 
 const Menu = ({ data }) => {
