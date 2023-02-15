@@ -11,7 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const Contact = ({ data }) => {
 
     const { lang, homeData, updateHomeData } = useAppContext();
-    const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '', kiltro: 'Kiltro Sant Antoni'});
+    const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '', kiltro: 'Sant Antoni'});
     const [formErrors, setFormErrors] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const notify = () => toast.success(`${lang === 'esp' ? '¡Mensaje enviado!' : 'Message sent!'}`, {
@@ -55,7 +55,7 @@ const Contact = ({ data }) => {
         if ( checkErrors() ) {
             
             try {
-                const req = await sendEmail(formData.email, '¡Nueva pregunta desde kiltrobcn.com!', formData.message, formData.phone, formData.name);
+                const req = await sendEmail(formData.email, '¡Nueva pregunta desde kiltrobcn.com!', formData.message, formData.phone, formData.name, formData.kiltro);
                 if (req.status === 250) {
                     notify();
                     setIsLoading(false);
@@ -85,7 +85,7 @@ const Contact = ({ data }) => {
             <div className="min-h-screen text-white">
                 {/* <div className="h-[30vh] lg:h-80 flex justify-center items-center bg-[url('https://images.unsplash.com/photo-1577563908411-5077b6dc7624?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')] bg-contain"></div> */}
                 {/* <div className="h-[10vh] lg:h-40 flex justify-center items-center bg-contain"></div> */}
-                <h2 className="flex justify-center py-5 font-bold uppercase md:text-2xl">
+                <h2 className="flex pt-24 justify-center py-5 font-bold uppercase md:text-2xl">
                     { lang === 'esp' && `Estamos aquí para ayudarte` }
                     { lang === 'eng' && 'We are here to help' }
                 </h2>
@@ -101,7 +101,7 @@ const Contact = ({ data }) => {
                         ))
                     }
                 </div> */}
-                <form className=" mx-10 md:mx-64 xl:mx-96 mt-10" onSubmit={handleOnSubmit}>
+                <form className=" mx-10 md:mx-64 mt-10 xl:mx-96" onSubmit={handleOnSubmit}>
                     <div className="mb-6">
                         <label htmlFor="kiltro" className="block mb-2 text-sm font-medium text-white">
                             { lang === 'esp' && `Selecciona tu Kiltro restobar` }
@@ -114,7 +114,7 @@ const Contact = ({ data }) => {
                             onChange={e => handleOnChange(e)} 
                         >
                             <option value="sant antoni">Kiltro Sant Antoni</option>
-                            <option value="gracia">Kiltro Gracia</option>
+                            <option value="Gracia">Kiltro Gracia</option>
                         </select>
                     </div>
                     <Input 

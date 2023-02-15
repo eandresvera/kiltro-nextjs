@@ -27,7 +27,8 @@ export default function Index({ data }) {
     <>
       <Head>
         <title>Kiltro Restobar</title>
-        <meta name="description" content="Kiltro restobar descripcion" />
+        <meta name="description" content="kiltro es un restobar con mucha influencia latinoamericana. cócteles,  infusiones y
+    comida latina. Bar latino primer lugar en Barcelona" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
