@@ -23,7 +23,7 @@ const Contact = ({ data }) => {
         draggable: true,
         progress: undefined,
         theme: "colored",
-        });;
+    });;
 
     const checkErrors = () => {
         // BECOUSE USESTATE IS ASYNCHRONOUS, WE NEED THIS ARRAY TO CONFIRM THERE IS NOT ERRORS
@@ -83,7 +83,7 @@ const Contact = ({ data }) => {
             <ToastContainer />
             <div className="min-h-screen text-white">
                 {/* <div className="h-[30vh] lg:h-80 flex justify-center items-center bg-[url('https://images.unsplash.com/photo-1577563908411-5077b6dc7624?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')] bg-contain"></div> */}
-                <div className="h-[10vh] lg:h-40 flex justify-center items-center bg-contain"></div>
+                {/* <div className="h-[10vh] lg:h-40 flex justify-center items-center bg-contain"></div> */}
                 <h2 className="flex justify-center py-5 font-bold uppercase md:text-2xl">
                     { lang === 'esp' && `Estamos aquí para ayudarte` }
                     { lang === 'eng' && 'We are here to help' }
