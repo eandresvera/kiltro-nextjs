@@ -4,7 +4,7 @@ import { fetchData } from '@/functions/fetchData';
 import React, { useEffect } from 'react'
 import Image from 'next/image';
 
-const Menu = ({ data }) => {
+const Cart = ({ data }) => {
 
   const { homeData, updateHomeData } = useAppContext();
   
@@ -47,7 +47,7 @@ const Menu = ({ data }) => {
   )
 }
 
-export default Menu;
+export default Cart;
 
 export async function getStaticProps (){
     const data = await fetchData();
