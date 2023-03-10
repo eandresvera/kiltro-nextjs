@@ -14,6 +14,7 @@ export async function fetchData( pageQuery=false ){
           cartImgs {
             nodes {
               sourceUrl
+              title
             }
           }
           firstImg {

@@ -18,6 +18,7 @@ const Menu = ({ data }) => {
   }
 
   const cartImgs = homeData.nodes[0].cartImgs && homeData.nodes[0].cartImgs.nodes;
+  const sortedCartImgs = cartImgs.sort((a, b) => a.title - b.title);
 
   return (
     <MainLayout>
@@ -29,7 +30,7 @@ const Menu = ({ data }) => {
         <div className='min-h-screen mx-10 pt-10 flex flex-col items-center justify-center pb-10 space-y-10 relative'>
           {
             cartImgs && 
-            cartImgs.map( img => (
+            sortedCartImgs.map( img => (
               
               <Image 
                 key={img.sourceUrl} 
