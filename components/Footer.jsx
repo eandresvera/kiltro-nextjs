@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
 import { useAppContext } from './context/AppContext'
+import { IconHeart } from './snippets/IconHeart'
 
 export const Footer = () => {
 
@@ -53,8 +54,10 @@ export const Footer = () => {
 
             <hr className='w-[90%] border-gray-500' />
 
-            <div className='flex justify-center pb-4'>
-                Kiltro Restobar © 2023
+            <div className='flex flex-col items-center justify-center pb-4 w-full'>
+                {/* Kiltro Restobar © 2023. Desarrollado con &nbsp;<IconHeart />&nbsp; por &nbsp; <a className='text-primary-main' href="https://www.vualapp.cl/" target='_blank'> vualapp.cl</a> */}
+                <span>Kiltro Restobar © 2023.</span>
+                <span className='flex'>Desarrollado con &nbsp; <IconHeart /> &nbsp; por &nbsp; <a className='text-primary-main' rel="noreferrer" href="https://www.vualapp.cl/" target='_blank'>vualapp.cl</a></span>
             </div>
         </div>
     )
