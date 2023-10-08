@@ -8,6 +8,7 @@ import { useAppContext } from '@/components/context/AppContext';
 import { useEffect } from 'react';
 import { Gallery } from '@/components/Gallery';
 import { MainLayout } from '@/components/layout/MainLayout';
+import { TripadvisorReviws } from '@/components/TripadvisorReviews';
 
 export default function Index({ data }) {
 
@@ -36,7 +37,9 @@ export default function Index({ data }) {
         <Home />
         <Parallax text={false}/>
         <Reserves />
+        <TripadvisorReviws />
         <Gallery />
+
       </MainLayout>
     </>
   )
