@@ -1,4 +1,4 @@
-const nodemailer = require('nodemailer');
+import nodemailer from 'nodemailer';
 
 export default function handler(req, res) {
 
@@ -22,8 +22,8 @@ export default function handler(req, res) {
     host: 'mail.kiltrobcn.com',
     port: 465,
     auth: {
-      user: process.env.NEXT_PUBLIC_EMAIL,
-      pass: process.env.NEXT_PUBLIC_EMAIL_PASS,
+      user: process.env.EMAIL,
+      pass: process.env.EMAIL_PASS,
     },
   });
 
