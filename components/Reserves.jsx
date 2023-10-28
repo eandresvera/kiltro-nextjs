@@ -5,6 +5,7 @@ import { useAppContext } from './context/AppContext'
 import { Modal } from './Modal';
 import { PrimaryButton } from './ui/PrimaryButton'
 import "aos/dist/aos.css"
+import { IconAddress } from './snippets/IconAddress';
 export const Reserves = () => {
 
   const [showModal, setShowModal] = useState(false);
@@ -48,13 +49,21 @@ export const Reserves = () => {
           <div className='space-y-8'>
             <p className='flex justify-center'>{local1Name}</p>
             {/* <PrimaryButton onClick={() => handleOnClick('santantoni')} lang={lang}/> */}
-            <PrimaryButton lang={lang} onClick={() => handleOnClick(local1Link)}/>
+            <PrimaryButton lang={lang} onClick={() => handleOnClick(local1Link)}/>  
+          </div>
+          <div className='flex mt-2 items-center'>
+            <IconAddress /> 
+            Villaroel 22, 08011. Barcelona
           </div>
         </div>
         <div className='w-full py-5 flex flex-col justify-center items-center'>
           <div className='space-y-8'>
             <p className='flex justify-center'>{local2Name}</p>
             <PrimaryButton onClick={() => handleOnClick(local2Link)} lang={lang}/>
+          </div>
+          <div className='flex mt-2 items-center'>
+            <IconAddress /> 
+            Montseny 13, 08012. Barcelona
           </div>
         </div>
 
